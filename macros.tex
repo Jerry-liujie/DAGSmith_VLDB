@@ -1,0 +1,64 @@
+% !TEX root = VLDB-2026-DAGSmith-Dependency-Aware-Rewriting-for-dbt-Style-SQL-Pipelines.tex
+\captionsetup[figure]{font=small, labelfont=bf}
+
+\newcommand{\cost}{\mathrm{cost}}
+\newcommand{\pred}{\mathrm{pred}}
+\newcommand{\override}[3]{#1\!\left[#2\leftarrow #3\right]}
+
+\newcommand{\head}[1]{{{\vspace*{1mm} \noindent \textbf{#1.}}}}
+\newcommand{\ph}[1]{\vspace{1mm} \noindent \textbf{#1} ---}
+\newcommand{\bm}[1]{\textcolor{blue}{\textbf{BM:} #1}}
+\newcommand{\VM}[1]{\bm{#1}}
+\newcommand{\barzan}[1]{\bm{#1}}
+\newcommand{\tofix}[1]{\textcolor{red}{#1}}
+% \newcommand{\RememberToChange}[1]{\textcolor{red}{#1}}
+\newcommand{\RememberToChange}[1]{{#1}}
+\newcommand{\code}[1]{{\normalfont\ttfamily\small #1}}
+
+
+\newcommand{\tool}{{DAGSmith}\xspace}
+
+
+\newfloat{listing}{htbp}{lol}
+\floatname{listing}{Listing}
+
+
+% Define a command for the internal figure headers
+\newcommand{\figsubheader}[1]{%
+    {\centering\small\textbf{#1}\par\medskip}%
+}
+
+\lstset{
+    language=SQL,
+    basicstyle=\tiny\ttfamily,
+    % --- Keyword Highlighting ---
+    keywordstyle=\color[HTML]{228B22}\bfseries, % Green for SQL keywords
+    ndkeywordstyle=\color[HTML]{228B22}\bfseries,
+    identifierstyle=\color{black},
+    commentstyle=\color{gray},
+    stringstyle=\color[HTML]{B22222},            % Dark red for strings like 's'
+    % --- Other Settings ---
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{gray!5},
+    frame=single,
+    rulecolor=\color{gray!40},
+    breaklines=true,
+    escapeinside={|}{|},
+    showstringspaces=false,
+    columns=flexible,
+    xleftmargin=2mm
+}
+
+
+\definecolor{lin}{HTML}{e31a1c}
+\newcommand{\linc}[1]{\textcolor{lin}{lin: #1}}
+
+\newcommand{\jie}[1]{\textcolor{blue}{Jie: #1}}
+
+\newcommand{\xxx}[1]{\sout{#1}}
+
+\newcommand{\inv}{\vspace*{-2mm}}
+\newcommand{\sinv}{\vspace*{-2mm}}
